@@ -1,13 +1,13 @@
 package Day3TobogganTrajectory;
 
-import common.FilePump;
+import common.Adventofile;
 
 public class CoursePlanner {
     
     private static final char TREE = '#';
 
     public static void main(String[] args){
-        char[][] map = FilePump.asCharMatrix("day3.txt");
+        char[][] map = Adventofile.asCharMatrix("day3.txt");
         
         long numTrees = checkDirection(1, 1, map);
         numTrees *= checkDirection(3, 1, map);

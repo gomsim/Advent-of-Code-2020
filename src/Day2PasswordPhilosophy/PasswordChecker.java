@@ -1,13 +1,13 @@
 package Day2PasswordPhilosophy;
 
-import common.FilePump;
+import common.Adventofile;
 import java.util.List;
 
 
 public class PasswordChecker{
 
     public static void main(String[] args){
-        List<String> list = FilePump.asList("day2.txt");
+        List<String> list = Adventofile.asList("day2.txt");
         System.out.println(numValidPasswords(list) + " of " + list.size() + " passwords were correct!");
     }
 

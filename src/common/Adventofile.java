@@ -6,12 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilePump{
+public class Adventofile{
 
     BufferedReader reader;
     String nextLine;
 
-    public FilePump(String file){
+    public Adventofile(String file){
         try{
             reader = new BufferedReader(new FileReader("input/" + file));
             nextLine = reader.readLine();
@@ -41,7 +41,7 @@ public class FilePump{
         }
     }
     public static List<String> asList(String file){
-        FilePump filePump = new FilePump(file);
+        Adventofile filePump = new Adventofile(file);
         List<String> list = new ArrayList<>();
 
         while(filePump.hasNext()){
@@ -52,7 +52,7 @@ public class FilePump{
         return list;
     }
     public static char[] asCharArray(String file){
-        FilePump filePump = new FilePump(file);
+        Adventofile filePump = new Adventofile(file);
         List<Character> list = new ArrayList<>();
         
         while(filePump.hasNext()){
