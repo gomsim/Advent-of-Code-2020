@@ -51,23 +51,6 @@ public class Adventofile{
 
         return list;
     }
-    public static char[] asCharArray(String file){
-        Adventofile filePump = new Adventofile(file);
-        List<Character> list = new ArrayList<>();
-        
-        while(filePump.hasNext()){
-            for (char c: filePump.readLine().toCharArray()){
-                list.add(c);
-            }
-        }
-        char[] array = new char[list.size()];
-        for (int i = 0; i < array.length; i++){
-            array[i] = list.get(i).charValue();
-        }
-        filePump.close();
-
-        return array;
-    }
 
     public static char[][] asCharMatrix(String file){
         List<String> list = asList(file);
