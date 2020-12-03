@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class Adventofile{
 
@@ -40,14 +41,25 @@ public class Adventofile{
             e.printStackTrace();
         }
     }
+
     public static List<String> asList(String file){
-        Adventofile filePump = new Adventofile(file);
+        Adventofile adventofile = new Adventofile(file);
         List<String> list = new ArrayList<>();
 
-        while(filePump.hasNext()){
-            list.add(filePump.readLine());
+        while(adventofile.hasNext()){
+            list.add(adventofile.readLine());
         }
-        filePump.close();
+        adventofile.close();
+
+        return list;
+    }
+    
+    public static <E> List<E> asMappedList(String file, Function<String,E> map){
+        List<E> list = new ArrayList<>();
+
+        for(String s: asList(file)){
+            list.add(map.apply(s));
+        }
 
         return list;
     }
