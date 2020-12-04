@@ -22,7 +22,7 @@ public class CoursePlanner {
     /**
      * Doesn't check the starting position
      */
-    private static int checkDirection(int dirX, int dirY, char[][] map){
+    private static long checkDirection(int dirX, int dirY, char[][] map){
         int x = 0, y = 0;
         int numTrees = 0;
 
