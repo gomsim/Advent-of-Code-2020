@@ -10,7 +10,6 @@ public class PassportProcessorPart2 {
     }
     
     private static int numValidPassports(ListFeed feed){
-        
         int counter = 0;
 
         while(feed.hasNext()){
