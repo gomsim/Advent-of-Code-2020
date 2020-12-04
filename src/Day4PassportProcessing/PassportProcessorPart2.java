@@ -10,11 +10,11 @@ public class PassportProcessorPart2 {
     }
     
     private static int numValidPassports(ListFeed feed){
-        Checklist checklist = new Checklist();
+        
         int counter = 0;
 
         while(feed.hasNext()){
-            checklist.clear();
+            Checklist checklist = new Checklist();
             String line;
             while(feed.hasNext() && !(line = feed.next()).isEmpty()){
                 String[] fields = line.split(" ");
@@ -32,28 +32,21 @@ public class PassportProcessorPart2 {
 
     private static class Checklist{
 
-        boolean[] list;
+        boolean byr, iyr, eyr, hgt, hcl, ecl, pid;
 
         private void check(String field, String value){
             switch(field){
-                case "byr": list[0] = value.matches("^(19[2-9][0-9]|200[0-2])$"); break;
-                case "iyr": list[1] = value.matches("^20(1[0-9]|20)$"); break;
-                case "eyr": list[2] = value.matches("^20(2[0-9]|30)$"); break;
-                case "hgt": list[3] = value.matches("^(1([5-8][0-9]|9[0-3])cm|(59|6[0-9]|7[0-6])in)$"); break;
-                case "hcl": list[4] = value.matches("#([0-9]|[a-f]){6}"); break;
-                case "ecl": list[5] = value.matches("^(amb|blu|brn|gry|grn|hzl|oth)$"); break;
-                case "pid": list[6] = value.matches("^[0-9]{9}$"); break;
+                case "byr": byr = value.matches("^(19[2-9][0-9]|200[0-2])$"); break;
+                case "iyr": iyr = value.matches("^20(1[0-9]|20)$"); break;
+                case "eyr": eyr = value.matches("^20(2[0-9]|30)$"); break;
+                case "hgt": hgt = value.matches("^(1([5-8][0-9]|9[0-3])cm|(59|6[0-9]|7[0-6])in)$"); break;
+                case "hcl": hcl = value.matches("#([0-9]|[a-f]){6}"); break;
+                case "ecl": ecl = value.matches("^(amb|blu|brn|gry|grn|hzl|oth)$"); break;
+                case "pid": pid = value.matches("^[0-9]{9}$"); break;
             }
-        }
-        private void clear(){
-            list = new boolean[7];
         }
         private boolean allValid(){
-            for (boolean checkedField: list){
-                if (!checkedField)
-                    return false;
-            }
-            return true;
+            return byr && iyr && eyr && hgt && hcl && ecl && pid;
         }
     }
 }
