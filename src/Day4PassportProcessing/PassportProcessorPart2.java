@@ -15,9 +15,9 @@ public class PassportProcessorPart2 {
 
         while(feed.hasNext()){
             checklist.clear();
-            String current;
-            while(feed.hasNext() && !(current = feed.next()).isEmpty()){
-                String[] fields = current.split(" ");
+            String line;
+            while(feed.hasNext() && !(line = feed.next()).isEmpty()){
+                String[] fields = line.split(" ");
                 for (String field: fields){
                     String[] fieldValuePair = field.split(":");
                     checklist.check(fieldValuePair[0], fieldValuePair[1]);

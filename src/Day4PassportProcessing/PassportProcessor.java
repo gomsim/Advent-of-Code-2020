@@ -14,7 +14,7 @@ public class PassportProcessor {
         System.out.println(numValid + " passports were... \"valid\"");
     }
     
-    private static int numValidPassports(ListFeeder feed){
+    private static int numValidPassports(ListFeed feed){
         int counter = 0;
 
         while(feed.hasNext()){

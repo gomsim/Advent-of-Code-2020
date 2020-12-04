@@ -23,21 +23,13 @@ public class PasswordCheckerPart2{
             char ruleChar = tokens[CHAR_TOK].charAt(CHAR);
             String password = tokens[PSWRD_TOK];
 
-            if (validNew(password, ruleChar, minChar, maxChar))
+            if (valid(password, ruleChar, minChar, maxChar))
                 counter++;
         }
         return counter;
     }
 
-    private static boolean validOld(String password, char ruleChar, int minChar, int maxChar){
-        int counter = 0;
-        for (char c: password.toCharArray()){
-            if (c == ruleChar)
-                counter++;
-        }
-        return counter <= maxChar && counter >= minChar;
-    }
-    private static boolean validNew(String password, char ruleChar, int first, int second){
+    private static boolean valid(String password, char ruleChar, int first, int second){
         return password.charAt(first - 1) == ruleChar ^ password.charAt(second - 1) == ruleChar;
     }
 }
