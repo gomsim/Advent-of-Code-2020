@@ -9,11 +9,12 @@ public class CoursePlanner {
     public static void main(String[] args){
         char[][] map = Adventofile.asCharMatrix("day3.txt");
         
-        long numTrees = checkDirection(1, 1, map);
-        numTrees *= checkDirection(3, 1, map);
-        numTrees *= checkDirection(5, 1, map);
-        numTrees *= checkDirection(7, 1, map);
-        numTrees *= checkDirection(1, 2, map);
+        long numTrees = 
+        checkDirection(1, 1, map) *
+        checkDirection(3, 1, map) *
+        checkDirection(5, 1, map) *
+        checkDirection(7, 1, map) *
+        checkDirection(1, 2, map);
 
         System.out.println("You will encounter " + numTrees + " trees on your way down.");
     }
