@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-public class Adventofile{
+public class Adventofile implements ListFeed{
 
     BufferedReader reader;
     String nextLine;
@@ -21,7 +21,7 @@ public class Adventofile{
         }
     }
 
-    public String readLine(){
+    public String next(){
         String line = "";
         try{
             line = nextLine;
@@ -47,7 +47,7 @@ public class Adventofile{
         List<String> list = new ArrayList<>();
 
         while(adventofile.hasNext()){
-            list.add(adventofile.readLine());
+            list.add(adventofile.next());
         }
         adventofile.close();
 
