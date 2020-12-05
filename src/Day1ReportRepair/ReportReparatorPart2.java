@@ -12,7 +12,7 @@ public class ReportReparatorPart2{
         for (int i = 0; i < list.size(); i++){
             for (int j = 0; j < list.size(); j++){
                 for (int k = 0; k < list.size(); k++){
-                    if ((list.get(i) + list.get(j) + list.get(k)) == GOAL){
+                    if (list.get(i) + list.get(j) + list.get(k) == GOAL){
                         System.out.println(list.get(i) * list.get(j) * list.get(k));
                         return;
                     }
