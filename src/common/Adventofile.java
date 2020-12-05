@@ -68,8 +68,8 @@ public class Adventofile implements ListFeed{
         List<String> list = asList(file);
         
         char[][] matrix = new char[list.get(0).length()][list.size()];
-        for (int y = 0; y < list.size(); y++){
-            for (int x = 0; x < list.get(0).length(); x++){
+        for (int x = 0; x < list.get(0).length(); x++){
+            for (int y = 0; y < list.size(); y++){
                 matrix[x][y] = list.get(y).charAt(x);
             }   
         }
